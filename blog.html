@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <title>Bamboo Care & Craft Blog | BambooCraft</title>
+    <meta name="description"
+        content="Expert guides on bamboo furniture maintenance, cane weaving preservation, and sustainable woodcare tips.">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'walnut-brown': '#1E5E3A', // Primary Bamboo Green (contrast 7.9:1 against white)
+                        'bamboo-green': '#1E5E3A',
+                        'warm-beige': '#F5F2EA',   // Natural Bamboo Cane Cream
+                        'bamboo-cream': '#F5F2EA',
+                        'forest-green': '#2D7A4D', // Bamboo Emerald
+                        'walnut-dark': '#134026',  // Deep Forest Bamboo
+                        'bamboo-dark': '#134026',
+                        'bamboo-light': '#D8EEDD', // High contrast highlight for dark mode
+                        'bamboo-gold': '#C88D34',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200 transition-colors duration-300">
+
+    <!-- Loading Animation -->
+    <div id="loader">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Header -->
+    <header id="header"
+        class="fixed w-full top-0 z-50 transition-all duration-300 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" class="flex items-center gap-3">
+                        <div
+                            class="flex items-center justify-center w-10 h-10 md:w-12 md:h-12 rounded-lg bg-walnut-brown text-warm-beige font-serif font-bold text-2xl md:text-3xl shadow-sm flex-shrink-0">
+                            <span>B</span>
+                        </div>
+                        <span class="font-serif font-bold tracking-normal text-2xl md:text-3xl text-gray-900 dark:text-white">Bamboo<span
+                                class="text-walnut-brown font-medium ml-0.5">Craft</span></span>
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden lg:flex lg:space-x-4 xl:space-x-8 items-center">
+                    <a href="index.html"
+                        class="nav-link text-sm xl:text-base text-gray-700 dark:text-gray-300 hover:text-walnut-brown dark:hover:text-white transition-colors">Home 1</a>
+                    <a href="home2.html"
+                        class="nav-link text-sm xl:text-base text-gray-700 dark:text-gray-300 hover:text-walnut-brown dark:hover:text-white transition-colors">Home
+                        2</a>
+                    <a href="about.html"
+                        class="nav-link text-sm xl:text-base text-gray-700 dark:text-gray-300 hover:text-walnut-brown dark:hover:text-white transition-colors">About</a>
+                    <a href="gallery.html"
+                        class="nav-link text-sm xl:text-base text-gray-700 dark:text-gray-300 hover:text-walnut-brown dark:hover:text-white transition-colors">Restoration</a>
+                    <a href="booking.html"
+                        class="nav-link text-sm xl:text-base text-gray-700 dark:text-gray-300 hover:text-walnut-brown dark:hover:text-white transition-colors">Book
+                        Service</a>
+                    <a href="blog.html"
+                        class="nav-link text-sm xl:text-base text-walnut-brown dark:text-bamboo-light font-semibold hover:text-walnut-brown dark:hover:text-white transition-colors">Blog</a>
+                    <a href="contact.html"
+                        class="nav-link text-sm xl:text-base text-gray-700 dark:text-gray-300 hover:text-walnut-brown dark:hover:text-white transition-colors">Contact</a>
+                </nav>
+
+                <!-- Right Actions -->
+                <div class="hidden lg:flex items-center lg:space-x-2 xl:space-x-4">
+                    <!-- Toggles -->
+                    <button id="themeToggle"
+                        class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                        aria-label="Toggle Theme">
+                        <i id="themeIcon" class="fa-solid fa-moon text-gray-600 dark:text-gray-300"></i>
+                    </button>
+                    <button id="rtlToggle"
+                        class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors text-sm font-semibold text-gray-600 dark:text-gray-300"
+                        aria-label="Toggle RTL">
+                        RTL
+                    </button>
+                    <!-- Auth -->
+                    <a href="signup.html"
+                        class="bg-walnut-brown hover:bg-walnut-dark text-white px-5 py-2 rounded-md transition-all shadow-md hover:shadow-lg font-medium">Signup</a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="lg:hidden flex items-center space-x-2">
+                    <button id="mobileMenuBtn"
+                        class="p-2 rounded-md text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu"
+            class="hidden lg:hidden bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 shadow-lg absolute w-full">
+            <div class="px-4 pt-2 pb-6 space-y-1">
+                <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800">Home 1</a>
+                <a href="home2.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800">Home 2</a>
+                <a href="about.html"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800">About</a>
+                <a href="gallery.html"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800">Restoration</a>
+                <a href="booking.html"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800">Book
+                    Service</a>
+                <a href="blog.html"
+                    class="block px-3 py-2 rounded-md text-base font-semibold text-walnut-brown dark:text-bamboo-light bg-warm-beige/50 dark:bg-gray-800">Blog</a>
+                <a href="contact.html"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800">Contact</a>
+                <div class="border-t border-gray-200 dark:border-gray-700 pt-4 mt-2 flex flex-col space-y-3 px-3">
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm font-medium text-gray-700 dark:text-gray-300">Preferences</span>
+                        <div class="flex items-center space-x-2">
+                            <button id="mobileThemeToggle" class="w-10 h-10 flex items-center justify-center rounded-full text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors bg-gray-50 dark:bg-gray-800" aria-label="Toggle Theme">
+                                <i id="mobileThemeIcon" class="fa-solid fa-moon"></i>
+                            </button>
+                            <button id="mobileRtlToggle" class="w-10 h-10 flex items-center justify-center rounded-full text-sm font-semibold text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors bg-gray-50 dark:bg-gray-800" aria-label="Toggle RTL">
+                                RTL
+                            </button>
+                        </div>
+                    </div>
+                    <a href="signup.html"
+                        class="block py-2 text-center rounded-md text-white bg-walnut-brown hover:bg-walnut-dark w-full font-medium">Signup</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="relative pt-40 pb-28 overflow-hidden">
+        <!-- Background Image with High Contrast Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1540932239986-30128078f3c5?auto=format&fit=crop&w=1920&q=80" alt="Bamboo Grove Insights"
+                class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gray-950/75"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white mb-6 drop-shadow-md">Bamboo Care & Craft Insights</h1>
+            <p class="text-lg md:text-xl text-gray-100 max-w-2xl mx-auto drop-shadow-sm font-normal leading-relaxed">Discover artisan advice, seasonal maintenance guides, and sustainable cane weaving insights to preserve your furniture.</p>
+        </div>
+    </section>
+
+    <!-- Blog Listing -->
+    <section class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+
+                <!-- Blog Post 1 -->
+                <article
+                    class="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700 hover-lift group">
+                    <div class="relative h-60 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1592078615290-033ee584e267?auto=format&fit=crop&w=800&q=80"
+                            alt="Bamboo Furniture Maintenance"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div
+                            class="absolute top-4 left-4 bg-walnut-brown text-white text-xs px-3 py-1 rounded-full font-bold z-10 shadow-sm">
+                            Bamboo Care</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-xs text-gray-500 dark:text-gray-400 mb-3 gap-4">
+                            <span class="flex items-center gap-1"><i class="fa-regular fa-calendar text-walnut-brown dark:text-bamboo-light"></i> Oct 12, 2026</span>
+                            <span class="flex items-center gap-1"><i class="fa-regular fa-user text-walnut-brown dark:text-bamboo-light"></i> Thomas Wright</span>
+                        </div>
+                        <h2
+                            class="text-xl font-bold font-serif text-gray-900 dark:text-white mb-3 group-hover:text-walnut-brown dark:group-hover:text-bamboo-light transition-colors line-clamp-2">
+                            <a href="#">Essential Bamboo Furniture Maintenance Tips for Decade-Long Vitality</a>
+                        </h2>
+                        <p class="text-gray-600 dark:text-gray-300 text-sm mb-6 line-clamp-3 leading-relaxed">
+                            Learn how to care for hollow bamboo stalks and woven cane seats. Discover safe botanical cleansers, humidity control guidelines, and natural beeswax balms.
+                        </p>
+                        <a href="#"
+                            class="inline-flex items-center font-bold text-walnut-brown dark:text-bamboo-light hover:underline text-sm">
+                            Read Guide <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Blog Post 2 -->
+                <article
+                    class="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700 hover-lift group">
+                    <div class="relative h-60 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&fit=crop&w=800&q=80"
+                            alt="Protecting Outdoor Bamboo"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div
+                            class="absolute top-4 left-4 bg-walnut-brown text-white text-xs px-3 py-1 rounded-full font-bold z-10 shadow-sm">
+                            Weatherproofing</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-xs text-gray-500 dark:text-gray-400 mb-3 gap-4">
+                            <span class="flex items-center gap-1"><i class="fa-regular fa-calendar text-walnut-brown dark:text-bamboo-light"></i> Oct 05, 2026</span>
+                            <span class="flex items-center gap-1"><i class="fa-regular fa-user text-walnut-brown dark:text-bamboo-light"></i> Marcus Chen</span>
+                        </div>
+                        <h2
+                            class="text-xl font-bold font-serif text-gray-900 dark:text-white mb-3 group-hover:text-walnut-brown dark:group-hover:text-bamboo-light transition-colors line-clamp-2">
+                            <a href="#">Preventing Outdoor Bamboo Splitting, Sun Graying & Mildew</a>
+                        </h2>
+                        <p class="text-gray-600 dark:text-gray-300 text-sm mb-6 line-clamp-3 leading-relaxed">
+                            Harsh sunlight and rain cycles cause bamboo nodes to split. We explain how breathable marine coatings and antifungal botanical treatments shield patio furniture.
+                        </p>
+                        <a href="#"
+                            class="inline-flex items-center font-bold text-walnut-brown dark:text-bamboo-light hover:underline text-sm">
+                            Read Guide <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Blog Post 3 -->
+                <article
+                    class="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700 hover-lift group">
+                    <div class="relative h-60 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?auto=format&fit=crop&w=800&q=80"
+                            alt="Cane Weaving Art"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div
+                            class="absolute top-4 left-4 bg-walnut-brown text-white text-xs px-3 py-1 rounded-full font-bold z-10 shadow-sm">
+                            Cane Weaving</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-xs text-gray-500 dark:text-gray-400 mb-3 gap-4">
+                            <span class="flex items-center gap-1"><i class="fa-regular fa-calendar text-walnut-brown dark:text-bamboo-light"></i> Sep 28, 2026</span>
+                            <span class="flex items-center gap-1"><i class="fa-regular fa-user text-walnut-brown dark:text-bamboo-light"></i> Elena Rodriguez</span>
+                        </div>
+                        <h2
+                            class="text-xl font-bold font-serif text-gray-900 dark:text-white mb-3 group-hover:text-walnut-brown dark:group-hover:text-bamboo-light transition-colors line-clamp-2">
+                            <a href="#">The Art of Cane & Rattan Webbing: Behind Our Re-Weaving Process</a>
+                        </h2>
+                        <p class="text-gray-600 dark:text-gray-300 text-sm mb-6 line-clamp-3 leading-relaxed">
+                            Discover the time-honored seven-step hand caning technique. See how natural rattan reeds are softened, woven under precise tension, and locked in with binder cane.
+                        </p>
+                        <a href="#"
+                            class="inline-flex items-center font-bold text-walnut-brown dark:text-bamboo-light hover:underline text-sm">
+                            Read Guide <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Blog Post 4 -->
+                <article
+                    class="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700 hover-lift group">
+                    <div class="relative h-60 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1540932239986-30128078f3c5?auto=format&fit=crop&w=800&q=80"
+                            alt="Sustainability of Bamboo"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div
+                            class="absolute top-4 left-4 bg-walnut-brown text-white text-xs px-3 py-1 rounded-full font-bold z-10 shadow-sm">
+                            Eco Living</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-xs text-gray-500 dark:text-gray-400 mb-3 gap-4">
+                            <span class="flex items-center gap-1"><i class="fa-regular fa-calendar text-walnut-brown dark:text-bamboo-light"></i> Sep 15, 2026</span>
+                            <span class="flex items-center gap-1"><i class="fa-regular fa-user text-walnut-brown dark:text-bamboo-light"></i> BambooCraft Team</span>
+                        </div>
+                        <h2
+                            class="text-xl font-bold font-serif text-gray-900 dark:text-white mb-3 group-hover:text-walnut-brown dark:group-hover:text-bamboo-light transition-colors line-clamp-2">
+                            <a href="#">Why Bamboo is the Future of Sustainable, Heirloom Living</a>
+                        </h2>
+                        <p class="text-gray-600 dark:text-gray-300 text-sm mb-6 line-clamp-3 leading-relaxed">
+                            Bamboo regenerates in 3-5 years without replanting, yielding fiber with higher tensile strength than steel. Why restoring vintage bamboo is an eco-conscious triumph.
+                        </p>
+                        <a href="#"
+                            class="inline-flex items-center font-bold text-walnut-brown dark:text-bamboo-light hover:underline text-sm">
+                            Read Guide <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Blog Post 5 -->
+                <article
+                    class="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700 hover-lift group">
+                    <div class="relative h-60 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1617806118233-18e1de247200?auto=format&fit=crop&w=800&q=80"
+                            alt="Vintage Peacock & Tiki Chairs"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div
+                            class="absolute top-4 left-4 bg-walnut-brown text-white text-xs px-3 py-1 rounded-full font-bold z-10 shadow-sm">
+                            Vintage Lore</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-xs text-gray-500 dark:text-gray-400 mb-3 gap-4">
+                            <span class="flex items-center gap-1"><i class="fa-regular fa-calendar text-walnut-brown dark:text-bamboo-light"></i> Sep 02, 2026</span>
+                            <span class="flex items-center gap-1"><i class="fa-regular fa-user text-walnut-brown dark:text-bamboo-light"></i> Thomas Wright</span>
+                        </div>
+                        <h2
+                            class="text-xl font-bold font-serif text-gray-900 dark:text-white mb-3 group-hover:text-walnut-brown dark:group-hover:text-bamboo-light transition-colors line-clamp-2">
+                            <a href="#">How to Identify & Value Vintage Bohemian Peacock & Tiki Chairs</a>
+                        </h2>
+                        <p class="text-gray-600 dark:text-gray-300 text-sm mb-6 line-clamp-3 leading-relaxed">
+                            A collector's guide to recognizing genuine mid-century bamboo and rattan artifacts, identifying authentic bamboo joints, and spotting salvageable treasures.
+                        </p>
+                        <a href="#"
+                            class="inline-flex items-center font-bold text-walnut-brown dark:text-bamboo-light hover:underline text-sm">
+                            Read Guide <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Blog Post 6 -->
+                <article
+                    class="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700 hover-lift group">
+                    <div class="relative h-60 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=800&q=80"
+                            alt="Repairing Broken Bamboo"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div
+                            class="absolute top-4 left-4 bg-walnut-brown text-white text-xs px-3 py-1 rounded-full font-bold z-10 shadow-sm">
+                            Restoration</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-xs text-gray-500 dark:text-gray-400 mb-3 gap-4">
+                            <span class="flex items-center gap-1"><i class="fa-regular fa-calendar text-walnut-brown dark:text-bamboo-light"></i> Aug 20, 2026</span>
+                            <span class="flex items-center gap-1"><i class="fa-regular fa-user text-walnut-brown dark:text-bamboo-light"></i> Marcus Chen</span>
+                        </div>
+                        <h2
+                            class="text-xl font-bold font-serif text-gray-900 dark:text-white mb-3 group-hover:text-walnut-brown dark:group-hover:text-bamboo-light transition-colors line-clamp-2">
+                            <a href="#">When to Repair vs. Replace: Preserving Structural Bamboo Stalks</a>
+                        </h2>
+                        <p class="text-gray-600 dark:text-gray-300 text-sm mb-6 line-clamp-3 leading-relaxed">
+                            Is your split bamboo stalk structurally compromised? Understand when internal doweling and steam straightening can save a cherished heirloom from disposal.
+                        </p>
+                        <a href="#"
+                            class="inline-flex items-center font-bold text-walnut-brown dark:text-bamboo-light hover:underline text-sm">
+                            Read Guide <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer
+        class="bg-white dark:bg-gray-900 text-gray-600 dark:text-gray-300 pt-16 pb-8 border-t border-gray-200 dark:border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <!-- Company Overview -->
+                <div>
+                    <a href="index.html" class="flex items-center gap-2 mb-6">
+                        <div
+                            class="flex items-center justify-center w-8 h-8 md:w-10 md:h-10 rounded bg-walnut-brown text-warm-beige shadow-sm font-serif font-bold text-lg md:text-xl flex-shrink-0">
+                            <span>B</span>
+                        </div>
+                        <span class="font-serif font-bold text-xl text-gray-900 dark:text-white">Bamboo<span
+                                class="text-walnut-brown">Craft</span></span>
+                    </a>
+                    <p class="text-sm text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+                        Dedicated to preserving the beauty, sustainable integrity, and tactile joy of bamboo and cane furniture. Traditional methods paired with modern botanical longevity.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 flex items-center justify-center hover:bg-walnut-brown hover:text-white dark:hover:bg-walnut-brown dark:hover:text-white transition-colors"><i
+                                class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 flex items-center justify-center hover:bg-walnut-brown hover:text-white dark:hover:bg-walnut-brown dark:hover:text-white transition-colors"><i
+                                class="fa-brands fa-instagram"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 flex items-center justify-center hover:bg-walnut-brown hover:text-white dark:hover:bg-walnut-brown dark:hover:text-white transition-colors"><i
+                                class="fa-brands fa-pinterest-p"></i></a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-gray-900 dark:text-white font-bold mb-6 font-serif text-lg">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="about.html"
+                                class="text-gray-600 dark:text-gray-300 hover:text-walnut-brown dark:hover:text-bamboo-light transition-colors flex items-center gap-2"><i
+                                    class="fa-solid fa-angle-right text-xs"></i> About Us</a></li>
+                        <li><a href="gallery.html"
+                                class="text-gray-600 dark:text-gray-300 hover:text-walnut-brown dark:hover:text-bamboo-light transition-colors flex items-center gap-2"><i
+                                    class="fa-solid fa-angle-right text-xs"></i> Bamboo Gallery</a></li>
+                        <li><a href="booking.html"
+                                class="text-gray-600 dark:text-gray-300 hover:text-walnut-brown dark:hover:text-bamboo-light transition-colors flex items-center gap-2"><i
+                                    class="fa-solid fa-angle-right text-xs"></i> Book a Service</a></li>
+                        <li><a href="blog.html"
+                                class="text-gray-600 dark:text-gray-300 hover:text-walnut-brown dark:hover:text-bamboo-light transition-colors flex items-center gap-2"><i
+                                    class="fa-solid fa-angle-right text-xs"></i> Care & Craft Blog</a></li>
+                        <li><a href="contact.html"
+                                class="text-gray-600 dark:text-gray-300 hover:text-walnut-brown dark:hover:text-bamboo-light transition-colors flex items-center gap-2"><i
+                                    class="fa-solid fa-angle-right text-xs"></i> Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Information -->
+                <div>
+                    <h4 class="text-gray-900 dark:text-white font-bold mb-6 font-serif text-lg">Contact Info</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-location-dot mt-1 text-walnut-brown dark:text-bamboo-light"></i>
+                            <span class="text-sm text-gray-600 dark:text-gray-300">128 Bamboo Grove Way,<br>Craftsville, NY 10001</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-phone text-walnut-brown dark:text-bamboo-light"></i>
+                            <span class="text-sm text-gray-600 dark:text-gray-300">+1 (555) 234-5678</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-envelope text-walnut-brown dark:text-bamboo-light"></i>
+                            <span class="text-sm text-gray-600 dark:text-gray-300">hello@bamboocraft.com</span>
+                        </li>
+                        <li class="flex items-start gap-3 pt-2">
+                            <i class="fa-regular fa-clock mt-1 text-walnut-brown dark:text-bamboo-light"></i>
+                            <span class="text-sm text-gray-600 dark:text-gray-300">Mon - Fri: 8:30 AM - 6:00 PM<br>Sat: 9:00 AM - 3:00 PM</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter -->
+                <div>
+                    <h4 class="text-gray-900 dark:text-white font-bold mb-6 font-serif text-lg">Bamboo Care Guide</h4>
+                    <p class="text-sm text-gray-600 dark:text-gray-300 mb-4">Subscribe for seasonal bamboo maintenance tips, cane care advice, and exclusive restoration specials.</p>
+                    <form class="flex flex-col gap-3">
+                        <input type="email" placeholder="Your Email Address"
+                            class="bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white px-4 py-2 rounded-md focus:outline-none focus:border-walnut-brown w-full">
+                        <button type="button"
+                            class="bg-walnut-brown hover:bg-walnut-dark text-white px-4 py-2 rounded-md transition-colors font-semibold w-full">Subscribe</button>
+                    </form>
+                    <div class="mt-6">
+                        <h5
+                            class="text-xs text-gray-900 dark:text-gray-300 uppercase tracking-wider mb-2 font-bold">
+                            Service Areas</h5>
+                        <p class="text-xs text-gray-600 dark:text-gray-400">Manhattan, Brooklyn, Queens, Long Island, Westchester, and New Jersey.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div
+                class="border-t border-gray-200 dark:border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-sm text-gray-600 dark:text-gray-400">&copy; 2026 BambooCraft Furniture & Restoration. All rights
+                    reserved.</p>
+                <div class="flex gap-4 text-sm text-gray-600 dark:text-gray-400">
+                    <a href="#" class="hover:text-walnut-brown dark:hover:text-white transition-colors">Privacy
+                        Policy</a>
+                    <a href="#" class="hover:text-walnut-brown dark:hover:text-white transition-colors">Terms of
+                        Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button id="backToTop"
+        class="bg-walnut-brown hover:bg-walnut-dark text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center transition-all">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- Custom JS -->
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

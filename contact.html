@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <title>Contact Us | BambooCraft - Bamboo Furniture Restoration</title>
+    <meta name="description"
+        content="Get in touch with our bamboo and cane furniture restoration experts. Visit our craft workshop or request a consultation.">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'walnut-brown': '#1E5E3A', // Primary Bamboo Green (contrast 7.9:1 against white)
+                        'bamboo-green': '#1E5E3A',
+                        'warm-beige': '#F5F2EA',   // Natural Bamboo Cane Cream
+                        'bamboo-cream': '#F5F2EA',
+                        'forest-green': '#2D7A4D', // Bamboo Emerald
+                        'walnut-dark': '#134026',  // Deep Forest Bamboo
+                        'bamboo-dark': '#134026',
+                        'bamboo-light': '#D8EEDD', // High contrast highlight for dark mode
+                        'bamboo-gold': '#C88D34',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200 transition-colors duration-300">
+
+    <!-- Loading Animation -->
+    <div id="loader">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Header -->
+    <header id="header"
+        class="fixed w-full top-0 z-50 transition-all duration-300 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" class="flex items-center gap-3">
+                        <div
+                            class="flex items-center justify-center w-10 h-10 md:w-12 md:h-12 rounded-lg bg-walnut-brown text-warm-beige font-serif font-bold text-2xl md:text-3xl shadow-sm flex-shrink-0">
+                            <span>B</span>
+                        </div>
+                        <span class="font-serif font-bold tracking-normal text-2xl md:text-3xl text-gray-900 dark:text-white">Bamboo<span
+                                class="text-walnut-brown font-medium ml-0.5">Craft</span></span>
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden lg:flex lg:space-x-4 xl:space-x-8 items-center">
+                    <a href="index.html"
+                        class="nav-link text-sm xl:text-base text-gray-700 dark:text-gray-300 hover:text-walnut-brown dark:hover:text-white transition-colors">Home 1</a>
+                    <a href="home2.html"
+                        class="nav-link text-sm xl:text-base text-gray-700 dark:text-gray-300 hover:text-walnut-brown dark:hover:text-white transition-colors">Home
+                        2</a>
+                    <a href="about.html"
+                        class="nav-link text-sm xl:text-base text-gray-700 dark:text-gray-300 hover:text-walnut-brown dark:hover:text-white transition-colors">About</a>
+                    <a href="gallery.html"
+                        class="nav-link text-sm xl:text-base text-gray-700 dark:text-gray-300 hover:text-walnut-brown dark:hover:text-white transition-colors">Restoration</a>
+                    <a href="booking.html"
+                        class="nav-link text-sm xl:text-base text-gray-700 dark:text-gray-300 hover:text-walnut-brown dark:hover:text-white transition-colors">Book
+                        Service</a>
+                    <a href="blog.html"
+                        class="nav-link text-sm xl:text-base text-gray-700 dark:text-gray-300 hover:text-walnut-brown dark:hover:text-white transition-colors">Blog</a>
+                    <a href="contact.html"
+                        class="nav-link text-sm xl:text-base text-walnut-brown dark:text-bamboo-light font-semibold hover:text-walnut-brown dark:hover:text-white transition-colors">Contact</a>
+                </nav>
+
+                <!-- Right Actions -->
+                <div class="hidden lg:flex items-center lg:space-x-2 xl:space-x-4">
+                    <!-- Toggles -->
+                    <button id="themeToggle"
+                        class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                        aria-label="Toggle Theme">
+                        <i id="themeIcon" class="fa-solid fa-moon text-gray-600 dark:text-gray-300"></i>
+                    </button>
+                    <button id="rtlToggle"
+                        class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors text-sm font-semibold text-gray-600 dark:text-gray-300"
+                        aria-label="Toggle RTL">
+                        RTL
+                    </button>
+                    <!-- Auth -->
+                    <a href="signup.html"
+                        class="bg-walnut-brown hover:bg-walnut-dark text-white px-5 py-2 rounded-md transition-all shadow-md hover:shadow-lg font-medium">Signup</a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="lg:hidden flex items-center space-x-2">
+                    <button id="mobileMenuBtn"
+                        class="p-2 rounded-md text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu"
+            class="hidden lg:hidden bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 shadow-lg absolute w-full">
+            <div class="px-4 pt-2 pb-6 space-y-1">
+                <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800">Home 1</a>
+                <a href="home2.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800">Home 2</a>
+                <a href="about.html"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800">About</a>
+                <a href="gallery.html"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800">Restoration</a>
+                <a href="booking.html"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800">Book
+                    Service</a>
+                <a href="blog.html"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800">Blog</a>
+                <a href="contact.html"
+                    class="block px-3 py-2 rounded-md text-base font-semibold text-walnut-brown dark:text-bamboo-light bg-warm-beige/50 dark:bg-gray-800">Contact</a>
+                <div class="border-t border-gray-200 dark:border-gray-700 pt-4 mt-2 flex flex-col space-y-3 px-3">
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm font-medium text-gray-700 dark:text-gray-300">Preferences</span>
+                        <div class="flex items-center space-x-2">
+                            <button id="mobileThemeToggle" class="w-10 h-10 flex items-center justify-center rounded-full text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors bg-gray-50 dark:bg-gray-800" aria-label="Toggle Theme">
+                                <i id="mobileThemeIcon" class="fa-solid fa-moon"></i>
+                            </button>
+                            <button id="mobileRtlToggle" class="w-10 h-10 flex items-center justify-center rounded-full text-sm font-semibold text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors bg-gray-50 dark:bg-gray-800" aria-label="Toggle RTL">
+                                RTL
+                            </button>
+                        </div>
+                    </div>
+                    <a href="signup.html"
+                        class="block py-2 text-center rounded-md text-white bg-walnut-brown hover:bg-walnut-dark w-full font-medium">Signup</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="relative pt-40 pb-28 overflow-hidden">
+        <!-- Background Image with High Contrast Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1540932239986-30128078f3c5?auto=format&fit=crop&w=1920&q=80" alt="Bamboo Craft Studio"
+                class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gray-950/75"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white mb-6 drop-shadow-md">Contact BambooCraft</h1>
+            <p class="text-lg md:text-xl text-gray-100 max-w-2xl mx-auto drop-shadow-sm font-normal leading-relaxed">Have questions about your bamboo piece or wish to arrange a workshop tour? We are here to help.</p>
+        </div>
+    </section>
+
+    <!-- Emergency Contact Banner -->
+    <div
+        class="bg-amber-50 text-amber-900 dark:bg-amber-950/40 dark:text-amber-200 py-4 border-y border-amber-200 dark:border-amber-800/50">
+        <div
+            class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+            <div class="flex items-center gap-3">
+                <i class="fa-solid fa-triangle-exclamation text-xl text-amber-600 dark:text-amber-400"></i>
+                <span class="font-semibold text-sm">Emergency bamboo repair needed? (Severe node splitting, storm damage, or broken load-bearing leg)</span>
+            </div>
+            <a href="tel:+15552345678"
+                class="bg-walnut-brown hover:bg-walnut-dark text-white px-6 py-2 rounded-full font-bold text-sm transition-colors shadow-md flex items-center gap-2 whitespace-nowrap">
+                <i class="fa-solid fa-phone"></i> Call Studio: (555) 234-5678
+            </a>
+        </div>
+    </div>
+
+    <!-- Contact Content -->
+    <section class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+
+                <!-- Contact Info & Hours -->
+                <div>
+                    <h2 class="text-3xl font-serif font-bold text-gray-900 dark:text-white mb-8">Visit Our Studio</h2>
+
+                    <div class="space-y-8 mb-12">
+                        <!-- Address -->
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="w-12 h-12 rounded-full bg-walnut-brown/10 dark:bg-gray-800 flex items-center justify-center flex-shrink-0 text-walnut-brown dark:text-bamboo-light text-xl">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold text-gray-900 dark:text-white mb-1">Workshop & Gallery</h4>
+                                <p class="text-gray-600 dark:text-gray-300">128 Bamboo Grove Way<br>Craftsville, NY 10001
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Phone -->
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="w-12 h-12 rounded-full bg-walnut-brown/10 dark:bg-gray-800 flex items-center justify-center flex-shrink-0 text-walnut-brown dark:text-bamboo-light text-xl">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold text-gray-900 dark:text-white mb-1">Direct Lines</h4>
+                                <p class="text-gray-600 dark:text-gray-300">+1 (555) 234-5678 (Studio)<br>+1 (555) 876-5432 (Logistics)
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="w-12 h-12 rounded-full bg-walnut-brown/10 dark:bg-gray-800 flex items-center justify-center flex-shrink-0 text-walnut-brown dark:text-bamboo-light text-xl">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold text-gray-900 dark:text-white mb-1">Email Inquiries</h4>
+                                <p class="text-gray-600 dark:text-gray-300">
+                                    hello@bamboocraft.com<br>estimates@bamboocraft.com</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Business Hours -->
+                    <div
+                        class="bg-white dark:bg-gray-800 rounded-xl p-8 shadow-md border border-gray-200 dark:border-gray-700">
+                        <h4
+                            class="text-xl font-serif font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-3">
+                            <i class="fa-regular fa-clock text-walnut-brown dark:text-bamboo-light"></i> Studio Hours
+                        </h4>
+                        <ul class="space-y-4">
+                            <li
+                                class="flex justify-between items-center text-sm border-b border-gray-100 dark:border-gray-700 pb-2">
+                                <span class="text-gray-600 dark:text-gray-400 font-medium">Monday - Friday</span>
+                                <span class="text-gray-900 dark:text-white font-bold">8:30 AM - 6:00 PM</span>
+                            </li>
+                            <li
+                                class="flex justify-between items-center text-sm border-b border-gray-100 dark:border-gray-700 pb-2">
+                                <span class="text-gray-600 dark:text-gray-400 font-medium">Saturday</span>
+                                <span class="text-gray-900 dark:text-white font-bold">9:00 AM - 3:00 PM</span>
+                            </li>
+                            <li class="flex justify-between items-center text-sm pb-2">
+                                <span class="text-gray-600 dark:text-gray-400 font-medium">Sunday</span>
+                                <span class="text-walnut-brown dark:text-bamboo-light font-bold">By Appointment Only</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div>
+                    <div
+                        class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-700 p-8 md:p-10 h-full">
+                        <h3 class="text-2xl font-serif font-bold text-gray-900 dark:text-white mb-2">Send Us a Message
+                        </h3>
+                        <p class="text-gray-600 dark:text-gray-300 text-sm mb-8">For repair photo estimates, you can also use our
+                            <a href="booking.html"
+                                class="text-walnut-brown dark:text-bamboo-light hover:underline font-bold">Service
+                                Booking</a> portal.
+                        </p>
+
+                        <form id="contactForm" class="space-y-6">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="contactName"
+                                        class="block text-sm font-semibold text-gray-700 dark:text-gray-200 mb-2">Your
+                                        Name *</label>
+                                    <input type="text" id="contactName" required
+                                        class="w-full bg-gray-50 dark:bg-gray-900 border border-gray-300 dark:border-gray-700 rounded-md px-4 py-3 text-gray-900 dark:text-white focus:ring-2 focus:ring-walnut-brown focus:border-transparent transition-all outline-none">
+                                </div>
+                                <div>
+                                    <label for="contactEmail"
+                                        class="block text-sm font-semibold text-gray-700 dark:text-gray-200 mb-2">Your
+                                        Email *</label>
+                                    <input type="email" id="contactEmail" required
+                                        class="w-full bg-gray-50 dark:bg-gray-900 border border-gray-300 dark:border-gray-700 rounded-md px-4 py-3 text-gray-900 dark:text-white focus:ring-2 focus:ring-walnut-brown focus:border-transparent transition-all outline-none">
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="contactPhone"
+                                        class="block text-sm font-semibold text-gray-700 dark:text-gray-200 mb-2">Phone
+                                        Number</label>
+                                    <input type="tel" id="contactPhone"
+                                        class="w-full bg-gray-50 dark:bg-gray-900 border border-gray-300 dark:border-gray-700 rounded-md px-4 py-3 text-gray-900 dark:text-white focus:ring-2 focus:ring-walnut-brown focus:border-transparent transition-all outline-none">
+                                </div>
+                                <div>
+                                    <label for="contactSubject"
+                                        class="block text-sm font-semibold text-gray-700 dark:text-gray-200 mb-2">Subject
+                                        *</label>
+                                    <input type="text" id="contactSubject" required
+                                        class="w-full bg-gray-50 dark:bg-gray-900 border border-gray-300 dark:border-gray-700 rounded-md px-4 py-3 text-gray-900 dark:text-white focus:ring-2 focus:ring-walnut-brown focus:border-transparent transition-all outline-none">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label for="contactMessage"
+                                    class="block text-sm font-semibold text-gray-700 dark:text-gray-200 mb-2">Your Message
+                                    *</label>
+                                <textarea id="contactMessage" rows="5" required
+                                    class="w-full bg-gray-50 dark:bg-gray-900 border border-gray-300 dark:border-gray-700 rounded-md px-4 py-3 text-gray-900 dark:text-white focus:ring-2 focus:ring-walnut-brown focus:border-transparent transition-all outline-none"
+                                    placeholder="Tell us about your bamboo furniture, condition, questions, or requirements..."></textarea>
+                            </div>
+
+                            <button type="submit"
+                                class="bg-walnut-brown hover:bg-walnut-dark text-white font-bold px-8 py-3.5 rounded-md transition-all shadow-md hover:shadow-lg inline-flex items-center gap-2">
+                                Send Message <i class="fa-regular fa-paper-plane"></i>
+                            </button>
+                        </form>
+
+                        <div id="contactSuccess" class="hidden text-center py-8">
+                            <div
+                                class="w-16 h-16 bg-green-100 text-forest-green rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fa-solid fa-check text-2xl"></i>
+                            </div>
+                            <h4 class="font-bold text-gray-900 dark:text-white mb-2">Message Sent Successfully!</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-300 mb-4">Our studio team will respond within 24 hours.</p>
+                            <button onclick="window.location.reload()"
+                                class="text-walnut-brown dark:text-bamboo-light text-sm font-bold hover:underline">Send
+                                another message</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="pb-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-gray-200 dark:bg-gray-800 w-full h-96 rounded-2xl overflow-hidden shadow-md relative border border-gray-200 dark:border-gray-700">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.15830869428!2d-74.119763973046!3d40.69766374874431!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY!5e0!3m2!1sen!2sus!4v1680000000000!5m2!1sen!2sus"
+                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    class="absolute inset-0 filter dark:invert dark:contrast-75 dark:hue-rotate-180 dark:opacity-80"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer
+        class="bg-white dark:bg-gray-900 text-gray-600 dark:text-gray-300 pt-16 pb-8 border-t border-gray-200 dark:border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <!-- Company Overview -->
+                <div>
+                    <a href="index.html" class="flex items-center gap-2 mb-6">
+                        <div
+                            class="flex items-center justify-center w-8 h-8 md:w-10 md:h-10 rounded bg-walnut-brown text-warm-beige shadow-sm font-serif font-bold text-lg md:text-xl flex-shrink-0">
+                            <span>B</span>
+                        </div>
+                        <span class="font-serif font-bold text-xl text-gray-900 dark:text-white">Bamboo<span
+                                class="text-walnut-brown">Craft</span></span>
+                    </a>
+                    <p class="text-sm text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+                        Dedicated to preserving the beauty, sustainable integrity, and tactile joy of bamboo and cane furniture. Traditional methods paired with modern botanical longevity.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 flex items-center justify-center hover:bg-walnut-brown hover:text-white dark:hover:bg-walnut-brown dark:hover:text-white transition-colors"><i
+                                class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 flex items-center justify-center hover:bg-walnut-brown hover:text-white dark:hover:bg-walnut-brown dark:hover:text-white transition-colors"><i
+                                class="fa-brands fa-instagram"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 flex items-center justify-center hover:bg-walnut-brown hover:text-white dark:hover:bg-walnut-brown dark:hover:text-white transition-colors"><i
+                                class="fa-brands fa-pinterest-p"></i></a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-gray-900 dark:text-white font-bold mb-6 font-serif text-lg">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="about.html"
+                                class="text-gray-600 dark:text-gray-300 hover:text-walnut-brown dark:hover:text-bamboo-light transition-colors flex items-center gap-2"><i
+                                    class="fa-solid fa-angle-right text-xs"></i> About Us</a></li>
+                        <li><a href="gallery.html"
+                                class="text-gray-600 dark:text-gray-300 hover:text-walnut-brown dark:hover:text-bamboo-light transition-colors flex items-center gap-2"><i
+                                    class="fa-solid fa-angle-right text-xs"></i> Bamboo Gallery</a></li>
+                        <li><a href="booking.html"
+                                class="text-gray-600 dark:text-gray-300 hover:text-walnut-brown dark:hover:text-bamboo-light transition-colors flex items-center gap-2"><i
+                                    class="fa-solid fa-angle-right text-xs"></i> Book a Service</a></li>
+                        <li><a href="blog.html"
+                                class="text-gray-600 dark:text-gray-300 hover:text-walnut-brown dark:hover:text-bamboo-light transition-colors flex items-center gap-2"><i
+                                    class="fa-solid fa-angle-right text-xs"></i> Care & Craft Blog</a></li>
+                        <li><a href="contact.html"
+                                class="text-gray-600 dark:text-gray-300 hover:text-walnut-brown dark:hover:text-bamboo-light transition-colors flex items-center gap-2"><i
+                                    class="fa-solid fa-angle-right text-xs"></i> Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Information -->
+                <div>
+                    <h4 class="text-gray-900 dark:text-white font-bold mb-6 font-serif text-lg">Contact Info</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-location-dot mt-1 text-walnut-brown dark:text-bamboo-light"></i>
+                            <span class="text-sm text-gray-600 dark:text-gray-300">128 Bamboo Grove Way,<br>Craftsville, NY 10001</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-phone text-walnut-brown dark:text-bamboo-light"></i>
+                            <span class="text-sm text-gray-600 dark:text-gray-300">+1 (555) 234-5678</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-envelope text-walnut-brown dark:text-bamboo-light"></i>
+                            <span class="text-sm text-gray-600 dark:text-gray-300">hello@bamboocraft.com</span>
+                        </li>
+                        <li class="flex items-start gap-3 pt-2">
+                            <i class="fa-regular fa-clock mt-1 text-walnut-brown dark:text-bamboo-light"></i>
+                            <span class="text-sm text-gray-600 dark:text-gray-300">Mon - Fri: 8:30 AM - 6:00 PM<br>Sat: 9:00 AM - 3:00 PM</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter -->
+                <div>
+                    <h4 class="text-gray-900 dark:text-white font-bold mb-6 font-serif text-lg">Bamboo Care Guide</h4>
+                    <p class="text-sm text-gray-600 dark:text-gray-300 mb-4">Subscribe for seasonal bamboo maintenance tips, cane care advice, and exclusive restoration specials.</p>
+                    <form class="flex flex-col gap-3">
+                        <input type="email" placeholder="Your Email Address"
+                            class="bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white px-4 py-2 rounded-md focus:outline-none focus:border-walnut-brown w-full">
+                        <button type="button"
+                            class="bg-walnut-brown hover:bg-walnut-dark text-white px-4 py-2 rounded-md transition-colors font-semibold w-full">Subscribe</button>
+                    </form>
+                    <div class="mt-6">
+                        <h5
+                            class="text-xs text-gray-900 dark:text-gray-300 uppercase tracking-wider mb-2 font-bold">
+                            Service Areas</h5>
+                        <p class="text-xs text-gray-600 dark:text-gray-400">Manhattan, Brooklyn, Queens, Long Island, Westchester, and New Jersey.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div
+                class="border-t border-gray-200 dark:border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-sm text-gray-600 dark:text-gray-400">&copy; 2026 BambooCraft Furniture & Restoration. All rights
+                    reserved.</p>
+                <div class="flex gap-4 text-sm text-gray-600 dark:text-gray-400">
+                    <a href="#" class="hover:text-walnut-brown dark:hover:text-white transition-colors">Privacy
+                        Policy</a>
+                    <a href="#" class="hover:text-walnut-brown dark:hover:text-white transition-colors">Terms of
+                        Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button id="backToTop"
+        class="bg-walnut-brown hover:bg-walnut-dark text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center transition-all">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- Custom JS -->
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

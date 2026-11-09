@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E5E3A"/>
+      <stop offset="100%" stop-color="#134026"/>
+    </linearGradient>
+  </defs>
+  <rect width="100" height="100" rx="22" fill="url(#bg)"/>
+  <!-- Bamboo node accent -->
+  <path d="M20 78 C35 76 65 76 80 78" stroke="#52B788" stroke-width="3" stroke-linecap="round" opacity="0.6"/>
+  <path d="M22 83 C35 81 65 81 78 83" stroke="#2D7A4D" stroke-width="2" stroke-linecap="round" opacity="0.8"/>
+  <text x="50" y="68" font-family="'Playfair Display', Georgia, serif" font-size="58" font-weight="bold" fill="#F5F2EA" text-anchor="middle">B</text>
+  <!-- Bamboo leaf sprout -->
+  <path d="M68 24 C74 20 82 23 84 29 C80 30 72 29 68 24 Z" fill="#74C69D"/>
+</svg>
