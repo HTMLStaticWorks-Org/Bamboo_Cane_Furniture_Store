@@ -101,6 +101,26 @@ h1, h2, h3, h4, h5, h6, .playfair {
     visibility: visible;
 }
 
+/* Social Media Buttons Hover (Light & Dark Theme) */
+footer a:has(.fa-brands),
+.social-icon-btn {
+    transition: all 0.25s ease-in-out;
+}
+footer a:has(.fa-brands):hover,
+.social-icon-btn:hover {
+    background-color: #1E5E3A !important;
+    color: #ffffff !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(30, 94, 58, 0.3);
+}
+footer a:has(.fa-brands):hover i,
+.social-icon-btn:hover i {
+    color: #ffffff !important;
+}
+
+    visibility: visible;
+}
+
 /* Gallery Hover Image Scale */
 .group:hover .group-hover\:scale-110 {
     transform: scale(1.1);

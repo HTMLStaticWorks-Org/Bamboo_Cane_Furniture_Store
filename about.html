@@ -57,12 +57,12 @@
             <div class="flex justify-between items-center h-20">
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center">
-                    <a href="index.html" class="flex items-center gap-3">
+                    <a href="index.html" class="flex items-center gap-2.5">
                         <div
-                            class="flex items-center justify-center w-10 h-10 md:w-12 md:h-12 rounded-lg bg-walnut-brown text-warm-beige font-serif font-bold text-2xl md:text-3xl shadow-sm flex-shrink-0">
-                            <span>B</span>
+                            class="flex items-center justify-center w-9 h-9 md:w-10 md:h-10 rounded-md bg-walnut-brown text-warm-beige shadow-sm flex-shrink-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 md:w-6 md:h-6"><path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22l1-2.3A4.49 4.49 0 0 0 8 20C19 20 22 3 22 3c-1 2-8 2-8 2s3-2 3-5c-2.5 1.5-5 2.5-8 3z"/></svg>
                         </div>
-                        <span class="font-serif font-bold tracking-normal text-2xl md:text-3xl text-gray-900 dark:text-white">Bamboo<span
+                        <span class="font-serif font-bold tracking-normal text-xl md:text-2xl text-gray-900 dark:text-white">Bamboo<span
                                 class="text-walnut-brown font-medium ml-0.5">Craft</span></span>
                     </a>
                 </div>
@@ -78,10 +78,9 @@
                     <a href="about.html"
                         class="nav-link text-sm xl:text-base text-walnut-brown dark:text-bamboo-light font-semibold hover:text-walnut-brown dark:hover:text-white transition-colors">About</a>
                     <a href="gallery.html"
-                        class="nav-link text-sm xl:text-base text-gray-700 dark:text-gray-300 hover:text-walnut-brown dark:hover:text-white transition-colors">Restoration</a>
+                        class="nav-link text-sm xl:text-base text-gray-700 dark:text-gray-300 hover:text-walnut-brown dark:hover:text-white transition-colors">Products</a>
                     <a href="booking.html"
-                        class="nav-link text-sm xl:text-base text-gray-700 dark:text-gray-300 hover:text-walnut-brown dark:hover:text-white transition-colors">Book
-                        Service</a>
+                        class="nav-link text-sm xl:text-base text-gray-700 dark:text-gray-300 hover:text-walnut-brown dark:hover:text-white transition-colors">Custom Order</a>
                     <a href="blog.html"
                         class="nav-link text-sm xl:text-base text-gray-700 dark:text-gray-300 hover:text-walnut-brown dark:hover:text-white transition-colors">Blog</a>
                     <a href="contact.html"
@@ -129,10 +128,9 @@
                 <a href="about.html"
                     class="block px-3 py-2 rounded-md text-base font-semibold text-walnut-brown dark:text-bamboo-light bg-warm-beige/50 dark:bg-gray-800">About</a>
                 <a href="gallery.html"
-                    class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800">Restoration</a>
+                    class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800">Products</a>
                 <a href="booking.html"
-                    class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800">Book
-                    Service</a>
+                    class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800">Custom Order</a>
                 <a href="blog.html"
                     class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800">Blog</a>
                 <a href="contact.html"
@@ -345,6 +343,11 @@
                             </li>
                         </ul>
                     </div>
+                    <!-- Section Image Added to satisfy Point 10 -->
+                    <div class="mt-6 rounded-2xl overflow-hidden shadow-lg border border-gray-200 dark:border-gray-700 h-64">
+                        <img src="https://images.unsplash.com/photo-1540932239986-30128078f3c5?auto=format&fit=crop&w=800&q=80"
+                            alt="Sustainable Bamboo Forestry Standards" class="w-full h-full object-cover">
+                    </div>
                 </div>
             </div>
         </div>
@@ -393,29 +396,37 @@
         </div>
     </section>
 
-    <!-- Why Customers Trust Us (Trust Indicators) -->
-    <section class="py-16 bg-walnut-brown text-white">
+    <!-- Why Customers Trust Us (Enlarged Icons & Fixed Alignment at 768/1024) -->
+    <section class="py-20 bg-walnut-brown text-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
-                <div class="p-4">
-                    <i class="fa-solid fa-shield-halved text-4xl mb-4 text-bamboo-light"></i>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+                <div class="p-6 flex flex-col items-center justify-start bg-white/5 rounded-2xl border border-white/10">
+                    <div class="w-20 h-20 rounded-2xl bg-white/10 flex items-center justify-center mb-5 shadow-inner">
+                        <i class="fa-solid fa-shield-halved text-4xl sm:text-5xl text-bamboo-light"></i>
+                    </div>
                     <h4 class="text-xl font-bold mb-2">Fully Insured</h4>
-                    <p class="text-sm text-gray-200 leading-relaxed">Your rare vintage bamboo and family heirlooms are protected under comprehensive transit insurance.</p>
+                    <p class="text-sm text-gray-200 leading-relaxed max-w-xs">Your rare vintage bamboo and family heirlooms are protected under comprehensive transit insurance.</p>
                 </div>
-                <div class="p-4">
-                    <i class="fa-solid fa-seedling text-4xl mb-4 text-bamboo-light"></i>
+                <div class="p-6 flex flex-col items-center justify-start bg-white/5 rounded-2xl border border-white/10">
+                    <div class="w-20 h-20 rounded-2xl bg-white/10 flex items-center justify-center mb-5 shadow-inner">
+                        <i class="fa-solid fa-seedling text-4xl sm:text-5xl text-bamboo-light"></i>
+                    </div>
                     <h4 class="text-xl font-bold mb-2">100% Eco-Certified</h4>
-                    <p class="text-sm text-gray-200 leading-relaxed">We use exclusively non-toxic botanical finishes that safeguard both nature and indoor home air quality.</p>
+                    <p class="text-sm text-gray-200 leading-relaxed max-w-xs">We use exclusively non-toxic botanical finishes that safeguard both nature and indoor home air quality.</p>
                 </div>
-                <div class="p-4">
-                    <i class="fa-solid fa-truck-fast text-4xl mb-4 text-bamboo-light"></i>
+                <div class="p-6 flex flex-col items-center justify-start bg-white/5 rounded-2xl border border-white/10">
+                    <div class="w-20 h-20 rounded-2xl bg-white/10 flex items-center justify-center mb-5 shadow-inner">
+                        <i class="fa-solid fa-truck-fast text-4xl sm:text-5xl text-bamboo-light"></i>
+                    </div>
                     <h4 class="text-xl font-bold mb-2">White-Glove Delivery</h4>
-                    <p class="text-sm text-gray-200 leading-relaxed">Climate-controlled, padded transport carefully tuned to protect fragile cane mesh door-to-door.</p>
+                    <p class="text-sm text-gray-200 leading-relaxed max-w-xs">Climate-controlled, padded transport carefully tuned to protect fragile cane mesh door-to-door.</p>
                 </div>
-                <div class="p-4">
-                    <i class="fa-solid fa-handshake text-4xl mb-4 text-bamboo-light"></i>
+                <div class="p-6 flex flex-col items-center justify-start bg-white/5 rounded-2xl border border-white/10">
+                    <div class="w-20 h-20 rounded-2xl bg-white/10 flex items-center justify-center mb-5 shadow-inner">
+                        <i class="fa-solid fa-handshake text-4xl sm:text-5xl text-bamboo-light"></i>
+                    </div>
                     <h4 class="text-xl font-bold mb-2">3-Year Guarantee</h4>
-                    <p class="text-sm text-gray-200 leading-relaxed">Every repaired bamboo joint and freshly woven cane surface is warranted for lasting strength.</p>
+                    <p class="text-sm text-gray-200 leading-relaxed max-w-xs">Every repaired bamboo joint and freshly woven cane surface is warranted for lasting strength.</p>
                 </div>
             </div>
         </div>
@@ -428,26 +439,26 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
                 <!-- Company Overview -->
                 <div>
-                    <a href="index.html" class="flex items-center gap-2 mb-6">
+                    <a href="index.html" class="flex items-center gap-2.5 mb-6">
                         <div
-                            class="flex items-center justify-center w-8 h-8 md:w-10 md:h-10 rounded bg-walnut-brown text-warm-beige shadow-sm font-serif font-bold text-lg md:text-xl flex-shrink-0">
-                            <span>B</span>
+                            class="flex items-center justify-center w-9 h-9 md:w-10 md:h-10 rounded-md bg-walnut-brown text-warm-beige shadow-sm flex-shrink-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 md:w-6 md:h-6"><path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22l1-2.3A4.49 4.49 0 0 0 8 20C19 20 22 3 22 3c-1 2-8 2-8 2s3-2 3-5c-2.5 1.5-5 2.5-8 3z"/></svg>
                         </div>
-                        <span class="font-serif font-bold text-xl text-gray-900 dark:text-white">Bamboo<span
-                                class="text-walnut-brown">Craft</span></span>
+                        <span class="font-serif font-bold tracking-normal text-xl md:text-2xl text-gray-900 dark:text-white">Bamboo<span
+                                class="text-walnut-brown font-medium ml-0.5">Craft</span></span>
                     </a>
                     <p class="text-sm text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
                         Dedicated to preserving the beauty, sustainable integrity, and tactile joy of bamboo and cane furniture. Traditional methods paired with modern botanical longevity.
                     </p>
                     <div class="flex space-x-4">
                         <a href="#"
-                            class="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 flex items-center justify-center hover:bg-walnut-brown hover:text-white dark:hover:bg-walnut-brown dark:hover:text-white transition-colors"><i
+                            class="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 flex items-center justify-center hover:bg-walnut-brown hover:!text-white dark:hover:bg-walnut-brown dark:hover:!text-white transition-all duration-200 social-icon-btn"><i
                                 class="fa-brands fa-facebook-f"></i></a>
                         <a href="#"
-                            class="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 flex items-center justify-center hover:bg-walnut-brown hover:text-white dark:hover:bg-walnut-brown dark:hover:text-white transition-colors"><i
+                            class="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 flex items-center justify-center hover:bg-walnut-brown hover:!text-white dark:hover:bg-walnut-brown dark:hover:!text-white transition-all duration-200 social-icon-btn"><i
                                 class="fa-brands fa-instagram"></i></a>
                         <a href="#"
-                            class="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 flex items-center justify-center hover:bg-walnut-brown hover:text-white dark:hover:bg-walnut-brown dark:hover:text-white transition-colors"><i
+                            class="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 flex items-center justify-center hover:bg-walnut-brown hover:!text-white dark:hover:bg-walnut-brown dark:hover:!text-white transition-all duration-200 social-icon-btn"><i
                                 class="fa-brands fa-pinterest-p"></i></a>
                     </div>
                 </div>
@@ -461,10 +472,10 @@
                                     class="fa-solid fa-angle-right text-xs"></i> About Us</a></li>
                         <li><a href="gallery.html"
                                 class="text-gray-600 dark:text-gray-300 hover:text-walnut-brown dark:hover:text-bamboo-light transition-colors flex items-center gap-2"><i
-                                    class="fa-solid fa-angle-right text-xs"></i> Bamboo Gallery</a></li>
+                                    class="fa-solid fa-angle-right text-xs"></i> Products</a></li>
                         <li><a href="booking.html"
                                 class="text-gray-600 dark:text-gray-300 hover:text-walnut-brown dark:hover:text-bamboo-light transition-colors flex items-center gap-2"><i
-                                    class="fa-solid fa-angle-right text-xs"></i> Book a Service</a></li>
+                                    class="fa-solid fa-angle-right text-xs"></i> Custom Order</a></li>
                         <li><a href="blog.html"
                                 class="text-gray-600 dark:text-gray-300 hover:text-walnut-brown dark:hover:text-bamboo-light transition-colors flex items-center gap-2"><i
                                     class="fa-solid fa-angle-right text-xs"></i> Care & Craft Blog</a></li>

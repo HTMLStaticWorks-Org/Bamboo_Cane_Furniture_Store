@@ -60,9 +60,6 @@
         <button id="rtlToggle" class="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 text-white font-semibold text-xs backdrop-blur-sm transition-colors flex items-center justify-center" aria-label="Toggle RTL">
             RTL
         </button>
-        <a href="index.html" class="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 text-white backdrop-blur-sm transition-colors flex items-center justify-center" title="Back to Home">
-            <i class="fa-solid fa-xmark"></i>
-        </a>
     </div>
 
     <!-- Login Card -->
@@ -70,17 +67,23 @@
         <div class="bg-white/95 dark:bg-gray-800/95 backdrop-blur-xl rounded-2xl shadow-2xl overflow-hidden border border-white/20 dark:border-gray-700">
             
             <div class="p-8 md:p-10">
-                <!-- Logo -->
+                <!-- Logo & Welcome Note -->
                 <div class="text-center mb-8">
-                    <a href="index.html" class="inline-flex items-center gap-3 mb-2">
+                    <a href="index.html" class="inline-flex items-center gap-3 mb-4">
                         <div
-                            class="flex items-center justify-center w-10 h-10 md:w-12 md:h-12 rounded-lg bg-walnut-brown text-warm-beige font-serif font-bold text-2xl md:text-3xl shadow-sm flex-shrink-0">
-                            <span>B</span>
+                            class="flex items-center justify-center w-9 h-9 md:w-10 md:h-10 rounded-md bg-walnut-brown text-warm-beige shadow-sm flex-shrink-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 md:w-6 md:h-6">
+                                <path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22l1-2.3A4.49 4.49 0 0 0 8 20C19 20 22 3 22 3c-1 2-8 2-8 2s3-2 3-5c-2.5 1.5-5 2.5-8 3z"/>
+                            </svg>
                         </div>
-                        <span class="font-serif font-bold tracking-normal text-2xl md:text-3xl text-gray-900 dark:text-white">Bamboo<span
+                        <span class="font-serif font-bold tracking-normal text-xl md:text-2xl text-gray-900 dark:text-white">Bamboo<span
                                 class="text-walnut-brown font-medium ml-0.5">Craft</span></span>
                     </a>
-                    <p class="text-gray-600 dark:text-gray-300 text-sm">Welcome back! Please login to your account.</p>
+                    
+                    <div class="bg-warm-beige/70 dark:bg-gray-750/70 dark:bg-gray-700/60 rounded-xl p-4 border border-walnut-brown/20 dark:border-gray-600 mb-2">
+                        <h2 class="text-xl md:text-2xl font-serif font-bold text-gray-900 dark:text-white">Welcome Note</h2>
+                        <p class="text-gray-600 dark:text-gray-300 text-sm mt-1">Welcome back to our artisan community! Log in to manage your custom orders, repair quotes, and project milestones.</p>
+                    </div>
                 </div>
 
                 <form action="#" method="POST" class="space-y-5">
